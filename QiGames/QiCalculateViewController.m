@@ -14,13 +14,12 @@
 @property (weak, nonatomic) IBOutlet UILabel *factorLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *factorLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *factorLabel3;
-
 @property (weak, nonatomic) IBOutlet UILabel *operatorLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *operatorLabel2;
-
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
-
 @property (weak, nonatomic) IBOutlet UILabel *recordingLabel;
+
+@property (nonatomic, strong) QiSpeechManager *speechManager;
 
 @end
 
@@ -31,11 +30,14 @@
     [super viewDidLoad];
 }
 
-- (void)viewDidAppear:(BOOL)animated {
+- (void)viewWillAppear:(BOOL)animated {
     
-    [super viewDidAppear:animated];
+    [super viewWillAppear:animated];
     
-    [QiSpeechManager shareManager];
+    // _speechManager = [QiSpeechManager shareManager];
+    if (!_speechManager) {
+        _recordingLabel.backgroundColor = [UIColor clearColor];
+    }
 }
 
 - (void)dealloc {
@@ -50,25 +52,29 @@
     
     [self setQuestion];
     
-    _recordingLabel.text = @"";
-    _recordingLabel.layer.borderWidth = .0;
-    
-    [[QiSpeechManager shareManager] startRecordingWithResponse:^(NSString * _Nonnull formatString) {
-        self.recordingLabel.text = [formatString componentsSeparatedByString:@" "].lastObject;
-    }];
+    if (_speechManager) {
+        _recordingLabel.text = @"";
+        _recordingLabel.layer.borderWidth = .0;
+        
+        [_speechManager startRecordingWithResponse:^(NSString * _Nonnull formatString) {
+            self.recordingLabel.text = [formatString componentsSeparatedByString:@" "].lastObject;
+        }];
+    }
 }
 
 - (IBAction)resultButtonClicked:(id)sender {
     
-    [[QiSpeechManager shareManager] stopRecording];
-    
     _resultLabel.text = @([self calculate]).stringValue;
     
-    _recordingLabel.layer.borderWidth = 1.0;
-    if ([_recordingLabel.text isEqualToString:_resultLabel.text]) {
-        _recordingLabel.layer.borderColor = [UIColor greenColor].CGColor;
-    } else {
-        _recordingLabel.layer.borderColor = [UIColor redColor].CGColor;
+    if (_speechManager) {
+        [_speechManager stopRecording];
+        
+        _recordingLabel.layer.borderWidth = 1.0;
+        if ([_recordingLabel.text isEqualToString:_resultLabel.text]) {
+            _recordingLabel.layer.borderColor = [UIColor greenColor].CGColor;
+        } else {
+            _recordingLabel.layer.borderColor = [UIColor redColor].CGColor;
+        }
     }
 }
 
