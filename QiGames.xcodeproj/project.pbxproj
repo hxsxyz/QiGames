@@ -7,18 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		061E271D217F0C53003595D6 /* QiCalculteViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E271C217F0C53003595D6 /* QiCalculteViewController.m */; };
+		061E271D217F0C53003595D6 /* QiCalculateViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 061E271C217F0C53003595D6 /* QiCalculateViewController.m */; };
 		06371819217DE33A004FE349 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 06371818217DE33A004FE349 /* AppDelegate.m */; };
 		0637181C217DE33A004FE349 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0637181B217DE33A004FE349 /* ViewController.m */; };
 		0637181F217DE33A004FE349 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0637181D217DE33A004FE349 /* Main.storyboard */; };
 		06371821217DE33D004FE349 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 06371820217DE33D004FE349 /* Assets.xcassets */; };
 		06371824217DE33D004FE349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06371822217DE33D004FE349 /* LaunchScreen.storyboard */; };
 		06371827217DE33D004FE349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06371826217DE33D004FE349 /* main.m */; };
+		0665FC622180183A0036C5C1 /* QiCalculate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0665FC602180183A0036C5C1 /* QiCalculate.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		061E271B217F0C53003595D6 /* QiCalculteViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiCalculteViewController.h; sourceTree = "<group>"; };
-		061E271C217F0C53003595D6 /* QiCalculteViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiCalculteViewController.m; sourceTree = "<group>"; };
+		061E271B217F0C53003595D6 /* QiCalculateViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiCalculateViewController.h; sourceTree = "<group>"; };
+		061E271C217F0C53003595D6 /* QiCalculateViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiCalculateViewController.m; sourceTree = "<group>"; };
 		06371814217DE33A004FE349 /* QiGames.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QiGames.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		06371817217DE33A004FE349 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		06371818217DE33A004FE349 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -29,6 +30,7 @@
 		06371823217DE33D004FE349 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		06371825217DE33D004FE349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06371826217DE33D004FE349 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		0665FC612180183A0036C5C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QiGames/Base.lproj/QiCalculate.storyboard; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +47,7 @@
 		0637180B217DE33A004FE349 = {
 			isa = PBXGroup;
 			children = (
+				0665FC602180183A0036C5C1 /* QiCalculate.storyboard */,
 				06371816217DE33A004FE349 /* QiGames */,
 				06371815217DE33A004FE349 /* Products */,
 			);
@@ -65,8 +68,8 @@
 				06371818217DE33A004FE349 /* AppDelegate.m */,
 				0637181A217DE33A004FE349 /* ViewController.h */,
 				0637181B217DE33A004FE349 /* ViewController.m */,
-				061E271B217F0C53003595D6 /* QiCalculteViewController.h */,
-				061E271C217F0C53003595D6 /* QiCalculteViewController.m */,
+				061E271B217F0C53003595D6 /* QiCalculateViewController.h */,
+				061E271C217F0C53003595D6 /* QiCalculateViewController.m */,
 				0637181D217DE33A004FE349 /* Main.storyboard */,
 				06371820217DE33D004FE349 /* Assets.xcassets */,
 				06371822217DE33D004FE349 /* LaunchScreen.storyboard */,
@@ -134,6 +137,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				06371824217DE33D004FE349 /* LaunchScreen.storyboard in Resources */,
+				0665FC622180183A0036C5C1 /* QiCalculate.storyboard in Resources */,
 				06371821217DE33D004FE349 /* Assets.xcassets in Resources */,
 				0637181F217DE33A004FE349 /* Main.storyboard in Resources */,
 			);
@@ -148,7 +152,7 @@
 			files = (
 				0637181C217DE33A004FE349 /* ViewController.m in Sources */,
 				06371827217DE33D004FE349 /* main.m in Sources */,
-				061E271D217F0C53003595D6 /* QiCalculteViewController.m in Sources */,
+				061E271D217F0C53003595D6 /* QiCalculateViewController.m in Sources */,
 				06371819217DE33A004FE349 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -170,6 +174,14 @@
 				06371823217DE33D004FE349 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		0665FC602180183A0036C5C1 /* QiCalculate.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0665FC612180183A0036C5C1 /* Base */,
+			);
+			name = QiCalculate.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

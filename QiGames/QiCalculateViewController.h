@@ -1,5 +1,5 @@
 //
-//  QiCalculteViewController.h
+//  QiCalculateViewController.h
 //  QiGames
 //
 //  Created by huangxianshuai on 2018/10/23.
@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface QiCalculteViewController : UIViewController
+@interface QiCalculateViewController : UIViewController
 
 @end
 

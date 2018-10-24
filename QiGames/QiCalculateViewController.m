@@ -1,14 +1,14 @@
 //
-//  QiCalculteViewController.m
+//  QiCalculateViewController.m
 //  QiGames
 //
 //  Created by huangxianshuai on 2018/10/23.
 //  Copyright © 2018年 360.cn. All rights reserved.
 //
 
-#import "QiCalculteViewController.h"
+#import "QiCalculateViewController.h"
 
-@interface QiCalculteViewController ()
+@interface QiCalculateViewController ()
 
 @property (weak, nonatomic) IBOutlet UILabel *factorLabel1;
 @property (weak, nonatomic) IBOutlet UILabel *factorLabel2;
@@ -21,7 +21,7 @@
 
 @end
 
-@implementation QiCalculteViewController
+@implementation QiCalculateViewController
 
 - (void)viewDidLoad {
     
