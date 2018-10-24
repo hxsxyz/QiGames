@@ -68,8 +68,8 @@
 
 - (NSString *)generateFactor {
     
-    NSUInteger i = arc4random() % 10;
-    NSUInteger max = i < 4? 10: i < 7? 20: i < 9? 50: 100;
+    NSUInteger r = arc4random() % 10;
+    NSUInteger max = r < 4? 10: r < 7? 20: r < 9? 50: 100;
     NSUInteger factor = arc4random() % max;
     
     return @(factor).stringValue;
@@ -77,8 +77,8 @@
 
 - (NSString *)generateOperator {
     
-    NSUInteger i = arc4random() % 5;
-    NSString *operator = i < 2? @"+": i < 4? @"-": @"x";
+    NSUInteger r = arc4random() % 5;
+    NSString *operator = r < 2? @"+": r < 4? @"-": @"x";
     
     return operator;
 }

@@ -15,6 +15,7 @@
 		06371824217DE33D004FE349 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 06371822217DE33D004FE349 /* LaunchScreen.storyboard */; };
 		06371827217DE33D004FE349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06371826217DE33D004FE349 /* main.m */; };
 		0665FC622180183A0036C5C1 /* QiCalculate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0665FC602180183A0036C5C1 /* QiCalculate.storyboard */; };
+		0665FC65218022180036C5C1 /* QiGuessWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0665FC64218022180036C5C1 /* QiGuessWords.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +32,8 @@
 		06371825217DE33D004FE349 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		06371826217DE33D004FE349 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		0665FC612180183A0036C5C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QiGames/Base.lproj/QiCalculate.storyboard; sourceTree = "<group>"; };
+		0665FC63218022180036C5C1 /* QiGuessWords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiGuessWords.h; sourceTree = "<group>"; };
+		0665FC64218022180036C5C1 /* QiGuessWords.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiGuessWords.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +73,8 @@
 				0637181B217DE33A004FE349 /* ViewController.m */,
 				061E271B217F0C53003595D6 /* QiCalculateViewController.h */,
 				061E271C217F0C53003595D6 /* QiCalculateViewController.m */,
+				0665FC63218022180036C5C1 /* QiGuessWords.h */,
+				0665FC64218022180036C5C1 /* QiGuessWords.m */,
 				0637181D217DE33A004FE349 /* Main.storyboard */,
 				06371820217DE33D004FE349 /* Assets.xcassets */,
 				06371822217DE33D004FE349 /* LaunchScreen.storyboard */,
@@ -154,6 +159,7 @@
 				06371827217DE33D004FE349 /* main.m in Sources */,
 				061E271D217F0C53003595D6 /* QiCalculateViewController.m in Sources */,
 				06371819217DE33A004FE349 /* AppDelegate.m in Sources */,
+				0665FC65218022180036C5C1 /* QiGuessWords.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
