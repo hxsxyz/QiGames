@@ -16,6 +16,8 @@
 		06371827217DE33D004FE349 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 06371826217DE33D004FE349 /* main.m */; };
 		0665FC622180183A0036C5C1 /* QiCalculate.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0665FC602180183A0036C5C1 /* QiCalculate.storyboard */; };
 		0665FC65218022180036C5C1 /* QiGuessWords.m in Sources */ = {isa = PBXBuildFile; fileRef = 0665FC64218022180036C5C1 /* QiGuessWords.m */; };
+		06DAFBFE21805385007E869D /* QiSpeechManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DAFBFD21805385007E869D /* QiSpeechManager.m */; };
+		06DAFC0121808C3D007E869D /* Tools.m in Sources */ = {isa = PBXBuildFile; fileRef = 06DAFC0021808C3C007E869D /* Tools.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,10 @@
 		0665FC612180183A0036C5C1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QiGames/Base.lproj/QiCalculate.storyboard; sourceTree = "<group>"; };
 		0665FC63218022180036C5C1 /* QiGuessWords.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiGuessWords.h; sourceTree = "<group>"; };
 		0665FC64218022180036C5C1 /* QiGuessWords.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiGuessWords.m; sourceTree = "<group>"; };
+		06DAFBFC21805385007E869D /* QiSpeechManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QiSpeechManager.h; sourceTree = "<group>"; };
+		06DAFBFD21805385007E869D /* QiSpeechManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QiSpeechManager.m; sourceTree = "<group>"; };
+		06DAFBFF21808C3C007E869D /* Tools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Tools.h; sourceTree = "<group>"; };
+		06DAFC0021808C3C007E869D /* Tools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Tools.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,8 +79,12 @@
 				0637181B217DE33A004FE349 /* ViewController.m */,
 				061E271B217F0C53003595D6 /* QiCalculateViewController.h */,
 				061E271C217F0C53003595D6 /* QiCalculateViewController.m */,
+				06DAFBFC21805385007E869D /* QiSpeechManager.h */,
+				06DAFBFD21805385007E869D /* QiSpeechManager.m */,
 				0665FC63218022180036C5C1 /* QiGuessWords.h */,
 				0665FC64218022180036C5C1 /* QiGuessWords.m */,
+				06DAFBFF21808C3C007E869D /* Tools.h */,
+				06DAFC0021808C3C007E869D /* Tools.m */,
 				0637181D217DE33A004FE349 /* Main.storyboard */,
 				06371820217DE33D004FE349 /* Assets.xcassets */,
 				06371822217DE33D004FE349 /* LaunchScreen.storyboard */,
@@ -155,9 +165,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				06DAFC0121808C3D007E869D /* Tools.m in Sources */,
 				0637181C217DE33A004FE349 /* ViewController.m in Sources */,
 				06371827217DE33D004FE349 /* main.m in Sources */,
 				061E271D217F0C53003595D6 /* QiCalculateViewController.m in Sources */,
+				06DAFBFE21805385007E869D /* QiSpeechManager.m in Sources */,
 				06371819217DE33A004FE349 /* AppDelegate.m in Sources */,
 				0665FC65218022180036C5C1 /* QiGuessWords.m in Sources */,
 			);
@@ -310,12 +322,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZX24TX624;
 				INFOPLIST_FILE = QiGames/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.qihoo.iot.QiGames;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qishare.ios.hxs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -326,12 +340,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 8ZX24TX624;
 				INFOPLIST_FILE = QiGames/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = net.qihoo.iot.QiGames;
+				PRODUCT_BUNDLE_IDENTIFIER = com.qishare.ios.hxs;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

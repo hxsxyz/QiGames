@@ -7,6 +7,7 @@
 //
 
 #import "QiCalculateViewController.h"
+#import "QiSpeechManager.h"
 
 @interface QiCalculateViewController ()
 
@@ -19,6 +20,8 @@
 
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 
+@property (weak, nonatomic) IBOutlet UILabel *recordingLabel;
+
 @end
 
 @implementation QiCalculateViewController
@@ -28,10 +31,51 @@
     [super viewDidLoad];
 }
 
+- (void)viewDidAppear:(BOOL)animated {
+    
+    [super viewDidAppear:animated];
+    
+    [QiSpeechManager shareManager];
+}
+
+- (void)dealloc {
+    
+    NSLog(@"%s", __func__);
+}
+
 
 #pragma mark - Action functions
 
-- (IBAction)setQuestion:(id)sender {
+- (IBAction)questionButtonClicked:(id)sender {
+    
+    [self setQuestion];
+    
+    _recordingLabel.text = @"";
+    _recordingLabel.layer.borderWidth = .0;
+    
+    [[QiSpeechManager shareManager] startRecordingWithResponse:^(NSString * _Nonnull formatString) {
+        self.recordingLabel.text = [formatString componentsSeparatedByString:@" "].lastObject;
+    }];
+}
+
+- (IBAction)resultButtonClicked:(id)sender {
+    
+    [[QiSpeechManager shareManager] stopRecording];
+    
+    _resultLabel.text = @([self calculate]).stringValue;
+    
+    _recordingLabel.layer.borderWidth = 1.0;
+    if ([_recordingLabel.text isEqualToString:_resultLabel.text]) {
+        _recordingLabel.layer.borderColor = [UIColor greenColor].CGColor;
+    } else {
+        _recordingLabel.layer.borderColor = [UIColor redColor].CGColor;
+    }
+}
+
+
+#pragma mark - Private functions
+
+- (void)setQuestion {
     
     [self resetFactorsAndOperators];
     
@@ -43,7 +87,7 @@
     _operatorLabel2.text = [self generateOperator];
 }
 
-- (IBAction)calculate:(id)sender {
+- (NSInteger)calculate {
     
     NSUInteger factor1 = _factorLabel1.text.integerValue;
     NSUInteger factor2 = _factorLabel2.text.integerValue;
@@ -60,11 +104,8 @@
         result = [self calculateWithOperator:operator2 leftFactor:result rightFactor:factor3];
     }
     
-    _resultLabel.text = @(result).stringValue;
+    return result;
 }
-
-
-#pragma mark - Private functions
 
 - (NSString *)generateFactor {
     
