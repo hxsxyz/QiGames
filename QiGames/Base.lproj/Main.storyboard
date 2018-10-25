@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--2018·IoT云平台秋季团建游戏集-->
+        <!--都给我往死里干！团建游戏集-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -29,7 +29,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WBh-42-gPZ">
                                 <rect key="frame" x="85" y="253" width="150" height="38"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <state key="normal" title="你画我猜升级版"/>
+                                <state key="normal" title="你话我猜升级版"/>
                                 <connections>
                                     <segue destination="gSc-h0-WVx" kind="show" id="rTp-Dr-4Lm"/>
                                 </connections>
@@ -54,7 +54,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="2018·IoT云平台秋季团建游戏集" id="Y7n-U2-k0b">
+                    <navigationItem key="navigationItem" title="都给我往死里干！团建游戏集" id="Y7n-U2-k0b">
                         <barButtonItem key="backBarButtonItem" title=" " id="oKH-6u-wdL"/>
                     </navigationItem>
                 </viewController>

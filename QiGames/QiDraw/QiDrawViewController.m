@@ -38,18 +38,20 @@
     [self resetElements];
     
     _guessWords = [[QiGuessWords alloc] init];
+    
+    [_startButton setTitle:[_startButton titleForState:UIControlStateSelected] forState:(UIControlStateSelected | UIControlStateHighlighted)];
 }
 
 - (void)resetElements {
     
     _wordLabel.text = @"";
     
-    _seconds = 180;
+    _seconds = 10;
     _wrongCount = 0;
     _correctCount = 0;
-    _secondsLabel.text = [NSString stringWithFormat:@"剩余时间：%li", (long)_seconds];
-    _correctLabel.text = [NSString stringWithFormat:@"正确：%li", (long)_correctCount];
-    _wrongLabel.text = [NSString stringWithFormat:@"错误：%li", (long)_wrongCount];
+    _secondsLabel.text = [NSString stringWithFormat:@"%li", (long)_seconds];
+    _correctLabel.text = [NSString stringWithFormat:@"%li", (long)_correctCount];
+    _wrongLabel.text = [NSString stringWithFormat:@"%li", (long)_wrongCount];
     _correctButton.enabled = NO;
     _wrongButton.enabled = NO;
     _startButton.enabled = YES;
@@ -63,7 +65,7 @@
 //! 开始按钮点击事件
 - (IBAction)startButtonClicked:(UIButton *)sender {
     
-    NSString *message = [NSString stringWithFormat:@"确定要 %@ 吗？", (sender.selected)? @"复位": @"开始"];
+    NSString *message = [NSString stringWithFormat:@"确定要 %@ 吗？", sender.currentTitle];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:sender.currentTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
@@ -88,14 +90,14 @@
 //! 成功按钮点击事件
 - (IBAction)correctButtonClicked:(id)sender {
     
-    _correctLabel.text = [NSString stringWithFormat:@"正确：%li",(long)++_correctCount];
+    _correctLabel.text = [NSString stringWithFormat:@"%li",(long)++_correctCount];
     _wordLabel.text = _guessWords.randomWord;
 }
 
 //! 失败按钮点击事件
 - (IBAction)wrongButtonClicked:(id)sender {
     
-    _wrongLabel.text = [NSString stringWithFormat:@"错误：%li",(long)++_wrongCount];
+    _wrongLabel.text = [NSString stringWithFormat:@"%li",(long)++_wrongCount];
     _wordLabel.text = _guessWords.randomWord;
 }
 
@@ -117,7 +119,7 @@
 
 - (void)countDown {
 
-    _secondsLabel.text = [NSString stringWithFormat:@"剩余时间：%li", (long)--_seconds];
+    _secondsLabel.text = [NSString stringWithFormat:@"%li", (long)--_seconds];
     
     if (_seconds <= 0) {
         [self stopTimer];
@@ -126,15 +128,6 @@
     }
     else if (_seconds < 30) {
         _secondsLabel.textColor = [UIColor redColor];
-    }
-    else if (_seconds < 60) {
-        _secondsLabel.textColor = [UIColor orangeColor];
-    }
-    else if (_seconds < 120) {
-        _secondsLabel.textColor = [UIColor yellowColor];
-    }
-    else {
-        _secondsLabel.textColor = [UIColor greenColor];
     }
 }
 

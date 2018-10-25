@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="IoT云平台秋季轰趴-歪脖平台2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="5Fz-kX-phF">
-                                <rect key="frame" x="50" y="229" width="636" height="36"/>
+                                <rect key="frame" x="60" y="229" width="616" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="都给我往死里干！干！干！干！" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="HME-mP-yvb">
-                                <rect key="frame" x="20" y="137" width="696" height="60"/>
+                                <rect key="frame" x="30" y="137" width="676" height="60"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -33,11 +33,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="HME-mP-yvb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="Bn9-AB-dVd"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HME-mP-yvb" secondAttribute="trailing" constant="20" id="NqU-Th-XHI"/>
+                            <constraint firstItem="HME-mP-yvb" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="Bn9-AB-dVd"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HME-mP-yvb" secondAttribute="trailing" constant="30" id="NqU-Th-XHI"/>
                             <constraint firstItem="HME-mP-yvb" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="-40" id="Sbt-P2-Q8J"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Fz-kX-phF" secondAttribute="trailing" constant="50" id="ZjO-yO-2VV"/>
-                            <constraint firstItem="5Fz-kX-phF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="c2X-gK-TnU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5Fz-kX-phF" secondAttribute="trailing" constant="60" id="ZjO-yO-2VV"/>
+                            <constraint firstItem="5Fz-kX-phF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="c2X-gK-TnU"/>
                             <constraint firstItem="5Fz-kX-phF" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" constant="40" id="nGZ-Hy-qys"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
