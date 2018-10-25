@@ -4,6 +4,7 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -66,8 +67,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyv-HM-63x">
-                                <rect key="frame" x="20" y="324" width="338" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyv-HM-63x">
+                                <rect key="frame" x="258.66666666666669" y="324" width="218.66666666666669" height="70"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="70" id="VVt-R3-oyV"/>
@@ -78,8 +79,8 @@
                                     <action selector="questionButtonClicked:" destination="t02-o6-cZx" eventType="touchUpInside" id="ri2-pr-Oib"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDI-4U-V6Y">
-                                <rect key="frame" x="378" y="324" width="338" height="70"/>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xDI-4U-V6Y">
+                                <rect key="frame" x="497.33333333333331" y="324" width="218.66666666666669" height="70"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="结果"/>
@@ -116,20 +117,36 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybD-J8-5IH">
+                                <rect key="frame" x="19.999999999999986" y="324" width="218.66666666666663" height="70"/>
+                                <color key="backgroundColor" red="0.67481706809999997" green="1" blue="0.71098548699999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="开始">
+                                    <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <state key="selected" title="停止">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonClicked:" destination="t02-o6-cZx" eventType="touchUpInside" id="v9f-JI-car"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="qcS-yg-94r" firstAttribute="trailing" secondItem="epR-qj-8o2" secondAttribute="trailing" constant="20" id="2kQ-ob-E9n"/>
                             <constraint firstItem="XUP-zm-ffJ" firstAttribute="top" secondItem="qcS-yg-94r" secondAttribute="top" constant="20" id="3Dz-HM-rho"/>
                             <constraint firstItem="Zyv-HM-63x" firstAttribute="top" secondItem="xDI-4U-V6Y" secondAttribute="top" id="3ok-mu-lau"/>
+                            <constraint firstItem="ybD-J8-5IH" firstAttribute="leading" secondItem="qcS-yg-94r" secondAttribute="leading" constant="20" id="4b2-Fb-Uzt"/>
                             <constraint firstItem="Zyv-HM-63x" firstAttribute="width" secondItem="xDI-4U-V6Y" secondAttribute="width" id="7br-zD-iW2"/>
                             <constraint firstItem="gMq-cA-ORE" firstAttribute="centerY" secondItem="OS7-3m-Jm1" secondAttribute="centerY" id="8UJ-pg-xdN"/>
                             <constraint firstItem="Dif-Cs-Ug6" firstAttribute="width" secondItem="gMq-cA-ORE" secondAttribute="width" id="AMi-TY-AnN"/>
                             <constraint firstItem="Zyv-HM-63x" firstAttribute="baseline" secondItem="xDI-4U-V6Y" secondAttribute="firstBaseline" id="BD5-0E-ddk"/>
+                            <constraint firstItem="ybD-J8-5IH" firstAttribute="width" secondItem="Zyv-HM-63x" secondAttribute="width" id="Bli-Tv-pC5"/>
                             <constraint firstItem="epR-qj-8o2" firstAttribute="leading" secondItem="eCv-hA-yUM" secondAttribute="trailing" constant="10" id="CDS-Pv-6rN"/>
                             <constraint firstItem="sge-mq-Mnt" firstAttribute="leading" secondItem="pZa-Z2-Jyn" secondAttribute="trailing" constant="10" id="CM6-Bk-891"/>
-                            <constraint firstItem="Zyv-HM-63x" firstAttribute="leading" secondItem="bhO-wN-8tj" secondAttribute="leadingMargin" id="Dg4-qU-VNh"/>
                             <constraint firstItem="eCv-hA-yUM" firstAttribute="centerY" secondItem="gMq-cA-ORE" secondAttribute="centerY" id="GGj-8c-8yA"/>
+                            <constraint firstItem="qcS-yg-94r" firstAttribute="bottom" secondItem="ybD-J8-5IH" secondAttribute="bottom" constant="20" id="KqH-LB-6QD"/>
                             <constraint firstItem="epR-qj-8o2" firstAttribute="height" secondItem="gMq-cA-ORE" secondAttribute="height" id="Pw1-oj-l5C"/>
                             <constraint firstItem="Dif-Cs-Ug6" firstAttribute="leading" secondItem="sge-mq-Mnt" secondAttribute="trailing" constant="10" id="W1v-6A-CFI"/>
                             <constraint firstItem="sge-mq-Mnt" firstAttribute="centerY" secondItem="pZa-Z2-Jyn" secondAttribute="centerY" id="ZNI-fF-bMt"/>
@@ -145,8 +162,10 @@
                             <constraint firstItem="pZa-Z2-Jyn" firstAttribute="leading" secondItem="qcS-yg-94r" secondAttribute="leading" constant="20" id="pmn-MV-jdU"/>
                             <constraint firstItem="pZa-Z2-Jyn" firstAttribute="centerY" secondItem="qcS-yg-94r" secondAttribute="centerY" constant="-40" id="rSu-VE-1iQ"/>
                             <constraint firstItem="sge-mq-Mnt" firstAttribute="width" secondItem="OS7-3m-Jm1" secondAttribute="width" id="ryR-Vh-MCF"/>
+                            <constraint firstItem="ybD-J8-5IH" firstAttribute="height" secondItem="Zyv-HM-63x" secondAttribute="height" id="ucf-L9-n32"/>
                             <constraint firstItem="gMq-cA-ORE" firstAttribute="leading" secondItem="OS7-3m-Jm1" secondAttribute="trailing" constant="10" id="wdl-me-60D"/>
                             <constraint firstItem="xDI-4U-V6Y" firstAttribute="leading" secondItem="Zyv-HM-63x" secondAttribute="trailing" constant="20" id="x06-Db-dxy"/>
+                            <constraint firstItem="Zyv-HM-63x" firstAttribute="leading" secondItem="ybD-J8-5IH" secondAttribute="trailing" constant="20" id="ylt-0m-x6C"/>
                             <constraint firstItem="qcS-yg-94r" firstAttribute="trailing" secondItem="xDI-4U-V6Y" secondAttribute="trailing" constant="20" id="yvt-Gt-YRK"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qcS-yg-94r"/>
@@ -158,13 +177,16 @@
                         <outlet property="factorLabel3" destination="gMq-cA-ORE" id="uIh-dK-Efa"/>
                         <outlet property="operatorLabel1" destination="sge-mq-Mnt" id="4vL-4G-PW1"/>
                         <outlet property="operatorLabel2" destination="OS7-3m-Jm1" id="fwH-Q3-417"/>
+                        <outlet property="questionButton" destination="Zyv-HM-63x" id="LLF-So-phC"/>
                         <outlet property="recordingLabel" destination="XUP-zm-ffJ" id="vUq-we-n1g"/>
+                        <outlet property="resultButton" destination="xDI-4U-V6Y" id="z3a-iX-LlV"/>
                         <outlet property="resultLabel" destination="epR-qj-8o2" id="13c-Vz-qa1"/>
+                        <outlet property="startButton" destination="ybD-J8-5IH" id="rBR-9S-lBo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hah-cC-s5y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1950.8152173913045" y="133.33333333333334"/>
+            <point key="canvasLocation" x="2021.7391304347827" y="-8.6956521739130448"/>
         </scene>
     </scenes>
 </document>

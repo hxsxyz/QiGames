@@ -18,8 +18,14 @@
 @property (weak, nonatomic) IBOutlet UILabel *operatorLabel2;
 @property (weak, nonatomic) IBOutlet UILabel *resultLabel;
 @property (weak, nonatomic) IBOutlet UILabel *recordingLabel;
+@property (weak, nonatomic) IBOutlet UIButton *questionButton;
+@property (weak, nonatomic) IBOutlet UIButton *resultButton;
+@property (weak, nonatomic) IBOutlet UIButton *startButton;
 
 @property (nonatomic, strong) QiSpeechManager *speechManager;
+
+@property (nonatomic, strong) NSTimer *timer;//!< 计时器
+@property (nonatomic, assign) NSUInteger seconds;//!< 用时
 
 @end
 
@@ -28,16 +34,13 @@
 - (void)viewDidLoad {
     
     [super viewDidLoad];
+    
+    [_startButton setTitle:[_startButton titleForState:UIControlStateSelected] forState:(UIControlStateSelected | UIControlStateHighlighted)];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];
-    
-    // _speechManager = [QiSpeechManager shareManager];
-    if (!_speechManager) {
-        _recordingLabel.backgroundColor = [UIColor clearColor];
-    }
 }
 
 - (void)dealloc {
@@ -76,6 +79,29 @@
             _recordingLabel.layer.borderColor = [UIColor redColor].CGColor;
         }
     }
+}
+
+- (IBAction)startButtonClicked:(UIButton *)sender {
+    
+    NSString *message = [NSString stringWithFormat:@"确定要 %@ 吗？", sender.currentTitle];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:sender.currentTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        sender.selected = !sender.selected;
+        
+        self.questionButton.enabled = !self.questionButton.enabled;
+        self.resultButton.enabled = !self.resultButton.enabled;
+        
+        if (sender.selected) {
+            [self startGame];
+        } else {
+            [self stopGame];
+        }
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:confirmAction];
+    
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
 }
 
 
@@ -155,6 +181,41 @@
     _operatorLabel2.text = @"";
     
     _resultLabel.text = @"";
+}
+
+
+
+
+- (void)startGame {
+    
+    [self startTimer];
+    
+    _seconds = 0;
+    _recordingLabel.text = @"";
+    [self questionButtonClicked:self];
+}
+
+- (void)stopGame {
+    
+    [self stopTimer];
+}
+
+- (void)startTimer {
+    
+    [self stopTimer];
+    
+    _timer = [NSTimer scheduledTimerWithTimeInterval:1.0 target:self selector:@selector(countUp) userInfo:nil repeats:YES];
+}
+
+- (void)stopTimer {
+    
+    [_timer invalidate];
+    _timer = nil;
+}
+
+- (void)countUp {
+    
+    _recordingLabel.text = [NSString stringWithFormat:@"已用时：%li s", (long)_seconds++];
 }
 
 @end
