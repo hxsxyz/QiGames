@@ -63,31 +63,40 @@
 //! 开始按钮点击事件
 - (IBAction)startButtonClicked:(UIButton *)sender {
     
-    sender.selected = !sender.selected;
+    NSString *message = [NSString stringWithFormat:@"确定要 %@ 吗？", sender.currentTitle];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:sender.currentTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        sender.selected = !sender.selected;
+        
+        self.correctButton.enabled = !self.correctButton.enabled;
+        self.wrongButton.enabled = !self.wrongButton.enabled;
+        
+        if (sender.selected) {
+            self.wordLabel.text = self.guessWords.randomWord;
+            [self startTimer];
+        } else {
+            [self resetElements];
+        }
+    }];
+    [alertController addAction:cancelAction];
+    [alertController addAction:confirmAction];
     
-    _correctButton.enabled = !_correctButton.enabled;
-    _wrongButton.enabled = !_wrongButton.enabled;
-    
-    if (sender.selected) {
-        _wordLabel.text = self.guessWords.randomWord;
-        [self startTimer];
-    } else {
-        [self resetElements];
-    }
+    [self.navigationController presentViewController:alertController animated:YES completion:nil];
 }
 
 //! 成功按钮点击事件
 - (IBAction)correctButtonClicked:(id)sender {
     
     _correctLabel.text = [NSString stringWithFormat:@"正确：%li",(long)++_correctCount];
-    _wordLabel.text = self.guessWords.randomWord;
+    _wordLabel.text = _guessWords.randomWord;
 }
 
 //! 失败按钮点击事件
 - (IBAction)wrongButtonClicked:(id)sender {
     
     _wrongLabel.text = [NSString stringWithFormat:@"错误：%li",(long)++_wrongCount];
-    _wordLabel.text = self.guessWords.randomWord;
+    _wordLabel.text = _guessWords.randomWord;
 }
 
 
