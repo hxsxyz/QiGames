@@ -25,7 +25,6 @@
 @property (nonatomic, strong) QiSpeechManager *speechManager;
 
 @property (nonatomic, strong) NSTimer *timer;//!< 计时器
-@property (nonatomic, assign) NSUInteger seconds;//!< 用时
 
 @end
 
@@ -35,12 +34,9 @@
     
     [super viewDidLoad];
     
-    [_startButton setTitle:[_startButton titleForState:UIControlStateSelected] forState:(UIControlStateSelected | UIControlStateHighlighted)];
-}
-
-- (void)viewWillAppear:(BOOL)animated {
+    [self resetElements];
     
-    [super viewWillAppear:animated];
+    [_startButton setTitle:[_startButton titleForState:UIControlStateSelected] forState:(UIControlStateSelected | UIControlStateHighlighted)];
 }
 
 - (void)dealloc {
@@ -52,6 +48,9 @@
 #pragma mark - Action functions
 
 - (IBAction)questionButtonClicked:(id)sender {
+    
+    _questionButton.enabled = NO;
+    _resultButton.enabled = YES;
     
     [self setQuestion];
     
@@ -66,6 +65,9 @@
 }
 
 - (IBAction)resultButtonClicked:(id)sender {
+    
+    _questionButton.enabled = YES;
+    _resultButton.enabled = NO;
     
     _resultLabel.text = @([self calculate]).stringValue;
     
@@ -89,13 +91,14 @@
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:sender.currentTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         sender.selected = !sender.selected;
         
-        self.questionButton.enabled = !self.questionButton.enabled;
+        
         self.resultButton.enabled = !self.resultButton.enabled;
         
         if (sender.selected) {
-            [self startGame];
+            [self resetElements];
+            [self startTimer];
         } else {
-            [self stopGame];
+            [self stopTimer];
         }
     }];
     [alertController addAction:cancelAction];
@@ -109,7 +112,7 @@
 
 - (void)setQuestion {
     
-    [self resetFactorsAndOperators];
+    _resultLabel.text = @"";
     
     _factorLabel1.text = [self generateFactor];
     _factorLabel2.text = [self generateFactor];
@@ -171,33 +174,20 @@
     return result;
 }
 
-- (void)resetFactorsAndOperators {
+- (void)resetElements {
     
-    _factorLabel1.text = @"";
-    _factorLabel2.text = @"";
-    _factorLabel3.text = @"";
+    _factorLabel1.text = @"0";
+    _factorLabel2.text = @"0";
+    _factorLabel3.text = @"0";
     
-    _operatorLabel1.text = @"";
-    _operatorLabel2.text = @"";
+    _operatorLabel1.text = @"+";
+    _operatorLabel2.text = @"+";
     
-    _resultLabel.text = @"";
-}
-
-
-
-
-- (void)startGame {
+    _resultLabel.text = @"0";
+    _recordingLabel.text = @"0";
     
-    [self startTimer];
-    
-    _seconds = 0;
-    _recordingLabel.text = @"";
-    [self questionButtonClicked:self];
-}
-
-- (void)stopGame {
-    
-    [self stopTimer];
+    _questionButton.enabled = YES;
+    _resultButton.enabled = YES;
 }
 
 - (void)startTimer {
@@ -215,7 +205,8 @@
 
 - (void)countUp {
     
-    _recordingLabel.text = [NSString stringWithFormat:@"已用时：%li s", (long)_seconds++];
+    NSInteger count = _recordingLabel.text.integerValue;
+    _recordingLabel.text = @(++count).stringValue;
 }
 
 @end

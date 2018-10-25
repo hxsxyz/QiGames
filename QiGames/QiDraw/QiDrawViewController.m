@@ -42,11 +42,16 @@
     [_startButton setTitle:[_startButton titleForState:UIControlStateSelected] forState:(UIControlStateSelected | UIControlStateHighlighted)];
 }
 
+- (void)dealloc {
+    
+    NSLog(@"%s", __func__);
+}
+
 - (void)resetElements {
     
     _wordLabel.text = @"";
     
-    _seconds = 10;
+    _seconds = 180;
     _wrongCount = 0;
     _correctCount = 0;
     _secondsLabel.text = [NSString stringWithFormat:@"%li", (long)_seconds];
