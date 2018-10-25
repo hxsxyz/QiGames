@@ -63,12 +63,12 @@
 //! 开始按钮点击事件
 - (IBAction)startButtonClicked:(UIButton *)sender {
     
-    NSString *message = [NSString stringWithFormat:@"确定要 %@ 吗？", sender.currentTitle];
+    NSString *message = [NSString stringWithFormat:@"确定要 %@ 吗？", (sender.selected)? @"复位": @"开始"];
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:sender.currentTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
         sender.selected = !sender.selected;
-        
+    
         self.correctButton.enabled = !self.correctButton.enabled;
         self.wrongButton.enabled = !self.wrongButton.enabled;
         
