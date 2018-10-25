@@ -75,10 +75,10 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zyv-HM-63x">
-                                <rect key="frame" x="252" y="334" width="232" height="70"/>
+                                <rect key="frame" x="10" y="334" width="232" height="70"/>
                                 <color key="backgroundColor" red="0.93725490570000003" green="0.93725490570000003" blue="0.95686274770000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="VVt-R3-oyV"/>
+                                    <constraint firstAttribute="height" constant="70" id="XXJ-Al-neW"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="出题"/>
@@ -106,7 +106,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ybD-J8-5IH">
-                                <rect key="frame" x="10" y="334" width="232" height="70"/>
+                                <rect key="frame" x="252" y="334" width="232" height="70"/>
                                 <color key="backgroundColor" red="0.76470588235294112" green="1" blue="0.81960784313725488" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <state key="normal" title="开始">
@@ -124,44 +124,45 @@
                         <constraints>
                             <constraint firstItem="qcS-yg-94r" firstAttribute="trailing" secondItem="epR-qj-8o2" secondAttribute="trailing" constant="10" id="2kQ-ob-E9n"/>
                             <constraint firstItem="XUP-zm-ffJ" firstAttribute="top" secondItem="qcS-yg-94r" secondAttribute="top" constant="10" id="3Dz-HM-rho"/>
-                            <constraint firstItem="Zyv-HM-63x" firstAttribute="top" secondItem="xDI-4U-V6Y" secondAttribute="top" id="3ok-mu-lau"/>
-                            <constraint firstItem="ybD-J8-5IH" firstAttribute="leading" secondItem="qcS-yg-94r" secondAttribute="leading" constant="10" id="4b2-Fb-Uzt"/>
-                            <constraint firstItem="Zyv-HM-63x" firstAttribute="width" secondItem="xDI-4U-V6Y" secondAttribute="width" id="7br-zD-iW2"/>
+                            <constraint firstItem="ybD-J8-5IH" firstAttribute="centerY" secondItem="Zyv-HM-63x" secondAttribute="centerY" id="47w-o4-jsB"/>
+                            <constraint firstItem="ybD-J8-5IH" firstAttribute="leading" secondItem="Zyv-HM-63x" secondAttribute="trailing" constant="10" id="4sX-Mf-wpF"/>
                             <constraint firstItem="gMq-cA-ORE" firstAttribute="centerY" secondItem="OS7-3m-Jm1" secondAttribute="centerY" id="8UJ-pg-xdN"/>
                             <constraint firstItem="Dif-Cs-Ug6" firstAttribute="width" secondItem="gMq-cA-ORE" secondAttribute="width" id="AMi-TY-AnN"/>
-                            <constraint firstItem="Zyv-HM-63x" firstAttribute="baseline" secondItem="xDI-4U-V6Y" secondAttribute="firstBaseline" id="BD5-0E-ddk"/>
-                            <constraint firstItem="ybD-J8-5IH" firstAttribute="width" secondItem="Zyv-HM-63x" secondAttribute="width" id="Bli-Tv-pC5"/>
                             <constraint firstItem="epR-qj-8o2" firstAttribute="leading" secondItem="eCv-hA-yUM" secondAttribute="trailing" constant="5" id="CDS-Pv-6rN"/>
                             <constraint firstItem="sge-mq-Mnt" firstAttribute="leading" secondItem="pZa-Z2-Jyn" secondAttribute="trailing" constant="5" id="CM6-Bk-891"/>
                             <constraint firstItem="eCv-hA-yUM" firstAttribute="centerY" secondItem="gMq-cA-ORE" secondAttribute="centerY" id="GGj-8c-8yA"/>
                             <constraint firstItem="epR-qj-8o2" firstAttribute="width" secondItem="gMq-cA-ORE" secondAttribute="width" multiplier="1.5" id="IWk-Ju-Fod"/>
-                            <constraint firstItem="qcS-yg-94r" firstAttribute="bottom" secondItem="ybD-J8-5IH" secondAttribute="bottom" constant="10" id="KqH-LB-6QD"/>
+                            <constraint firstItem="qcS-yg-94r" firstAttribute="bottom" secondItem="Zyv-HM-63x" secondAttribute="bottom" constant="10" id="KnP-zm-nn5"/>
                             <constraint firstItem="gMq-cA-ORE" firstAttribute="height" secondItem="Dif-Cs-Ug6" secondAttribute="height" id="NeL-4c-WkF"/>
                             <constraint firstItem="epR-qj-8o2" firstAttribute="height" secondItem="gMq-cA-ORE" secondAttribute="height" id="Pw1-oj-l5C"/>
+                            <constraint firstItem="xDI-4U-V6Y" firstAttribute="leading" secondItem="ybD-J8-5IH" secondAttribute="trailing" constant="10" id="Ug2-3k-Z2c"/>
+                            <constraint firstItem="ybD-J8-5IH" firstAttribute="width" secondItem="xDI-4U-V6Y" secondAttribute="width" id="V4d-tX-wuu"/>
+                            <constraint firstItem="xDI-4U-V6Y" firstAttribute="centerY" secondItem="ybD-J8-5IH" secondAttribute="centerY" id="VIY-xQ-EXo"/>
                             <constraint firstItem="Dif-Cs-Ug6" firstAttribute="leading" secondItem="sge-mq-Mnt" secondAttribute="trailing" constant="5" id="W1v-6A-CFI"/>
                             <constraint firstItem="sge-mq-Mnt" firstAttribute="centerY" secondItem="pZa-Z2-Jyn" secondAttribute="centerY" id="ZNI-fF-bMt"/>
                             <constraint firstItem="pZa-Z2-Jyn" firstAttribute="width" secondItem="Dif-Cs-Ug6" secondAttribute="width" id="Zzi-bb-ekm"/>
                             <constraint firstItem="XUP-zm-ffJ" firstAttribute="leading" secondItem="qcS-yg-94r" secondAttribute="leading" constant="10" id="cLF-Uq-Hsh"/>
-                            <constraint firstItem="qcS-yg-94r" firstAttribute="bottom" secondItem="xDI-4U-V6Y" secondAttribute="bottom" constant="10" id="dIW-iR-j8x"/>
                             <constraint firstItem="Dif-Cs-Ug6" firstAttribute="centerY" secondItem="sge-mq-Mnt" secondAttribute="centerY" id="dxN-Iz-DPG"/>
                             <constraint firstItem="Dif-Cs-Ug6" firstAttribute="height" secondItem="pZa-Z2-Jyn" secondAttribute="height" id="g7c-2Q-fv5"/>
                             <constraint firstItem="OS7-3m-Jm1" firstAttribute="leading" secondItem="Dif-Cs-Ug6" secondAttribute="trailing" constant="5" id="gmz-GN-oRF"/>
+                            <constraint firstItem="qcS-yg-94r" firstAttribute="trailing" secondItem="xDI-4U-V6Y" secondAttribute="trailing" constant="10" id="kDe-ae-NwX"/>
                             <constraint firstItem="OS7-3m-Jm1" firstAttribute="centerY" secondItem="Dif-Cs-Ug6" secondAttribute="centerY" id="lQP-yI-14f"/>
+                            <constraint firstItem="ybD-J8-5IH" firstAttribute="height" secondItem="Zyv-HM-63x" secondAttribute="height" id="lgE-x6-lvn"/>
                             <constraint firstItem="eCv-hA-yUM" firstAttribute="leading" secondItem="gMq-cA-ORE" secondAttribute="trailing" constant="5" id="lxb-ao-Stq"/>
                             <constraint firstItem="qcS-yg-94r" firstAttribute="trailing" secondItem="XUP-zm-ffJ" secondAttribute="trailing" constant="10" id="n4o-7H-JFt"/>
                             <constraint firstItem="eCv-hA-yUM" firstAttribute="centerY" secondItem="epR-qj-8o2" secondAttribute="centerY" id="nsK-Vv-cNX"/>
+                            <constraint firstItem="xDI-4U-V6Y" firstAttribute="height" secondItem="ybD-J8-5IH" secondAttribute="height" id="olP-IO-flY"/>
                             <constraint firstItem="pZa-Z2-Jyn" firstAttribute="leading" secondItem="qcS-yg-94r" secondAttribute="leading" constant="10" id="pmn-MV-jdU"/>
                             <constraint firstItem="pZa-Z2-Jyn" firstAttribute="centerY" secondItem="qcS-yg-94r" secondAttribute="centerY" constant="-20" id="rSu-VE-1iQ"/>
                             <constraint firstItem="sge-mq-Mnt" firstAttribute="width" secondItem="OS7-3m-Jm1" secondAttribute="width" id="ryR-Vh-MCF"/>
-                            <constraint firstItem="ybD-J8-5IH" firstAttribute="height" secondItem="Zyv-HM-63x" secondAttribute="height" id="ucf-L9-n32"/>
+                            <constraint firstItem="Zyv-HM-63x" firstAttribute="leading" secondItem="qcS-yg-94r" secondAttribute="leading" constant="10" id="v99-cI-p5g"/>
+                            <constraint firstItem="qcS-yg-94r" firstAttribute="bottom" secondItem="xDI-4U-V6Y" secondAttribute="bottom" constant="10" id="vtE-MC-kYK"/>
                             <constraint firstItem="gMq-cA-ORE" firstAttribute="leading" secondItem="OS7-3m-Jm1" secondAttribute="trailing" constant="5" id="wdl-me-60D"/>
-                            <constraint firstItem="xDI-4U-V6Y" firstAttribute="leading" secondItem="Zyv-HM-63x" secondAttribute="trailing" constant="10" id="x06-Db-dxy"/>
-                            <constraint firstItem="Zyv-HM-63x" firstAttribute="leading" secondItem="ybD-J8-5IH" secondAttribute="trailing" constant="10" id="ylt-0m-x6C"/>
-                            <constraint firstItem="qcS-yg-94r" firstAttribute="trailing" secondItem="xDI-4U-V6Y" secondAttribute="trailing" constant="10" id="yvt-Gt-YRK"/>
+                            <constraint firstItem="Zyv-HM-63x" firstAttribute="width" secondItem="ybD-J8-5IH" secondAttribute="width" id="x9U-dJ-jal"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="qcS-yg-94r"/>
                     </view>
-                    <navigationItem key="navigationItem" title="数字速算" leftItemsSupplementBackButton="YES" id="cbY-fp-srn"/>
+                    <navigationItem key="navigationItem" title="数字速算" leftItemsSupplementBackButton="YES" id="cbY-fp-srn" userLabel="数字速算升级版"/>
                     <connections>
                         <outlet property="factorLabel1" destination="pZa-Z2-Jyn" id="kRh-Et-sb9"/>
                         <outlet property="factorLabel2" destination="Dif-Cs-Ug6" id="htd-0h-Efd"/>

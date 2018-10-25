@@ -58,7 +58,7 @@
     
     if (words.count == 0) {
         return self.randomWord;
-    }
+    } //!< 所有数据取完后会造成死循环
     
     NSUInteger index = arc4random() % words.count;
     NSString *randomWord = words[index];

@@ -132,7 +132,7 @@
     NSString *operator2 = _operatorLabel2.text;
     
     NSInteger result = [self calculateWithOperator:operator1 leftFactor:factor1 rightFactor:factor2];
-    if ([operator2 isEqualToString:@"x"]) {
+    if ([operator2 isEqualToString:@"×"]) {
         result = [self calculateWithOperator:operator2 leftFactor:factor2 rightFactor:factor3];
         result = [self calculateWithOperator:operator1 leftFactor:factor1 rightFactor:result];
     } else {
@@ -154,7 +154,7 @@
 - (NSString *)generateOperator {
     
     NSUInteger r = arc4random() % 5;
-    NSString *operator = r < 2? @"+": r < 4? @"-": @"x";
+    NSString *operator = r < 2? @"+": r < 4? @"-": @"×";
     
     return operator;
 }
