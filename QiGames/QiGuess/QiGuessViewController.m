@@ -77,8 +77,8 @@
     }
 }
 
-- (void)pauseTimer
-{
+- (void)pauseTimer {
+    
     [_countDownTimer invalidate];
     _countDownTimer = nil;
 }

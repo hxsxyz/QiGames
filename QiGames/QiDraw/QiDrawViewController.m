@@ -95,7 +95,7 @@
 //! 成功按钮点击事件
 - (IBAction)correctButtonClicked:(id)sender {
     
-    _correctLabel.text = [NSString stringWithFormat:@"%li",(long)_correctCount];
+    _correctLabel.text = [NSString stringWithFormat:@"%li",(long)++_correctCount];
     _wordLabel.text = _guessWords.randomWord;
 }
 
