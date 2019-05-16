@@ -99,8 +99,6 @@
 				061E271C217F0C53003595D6 /* QiCalculateViewController.m */,
 				06DAFBFC21805385007E869D /* QiSpeechManager.h */,
 				06DAFBFD21805385007E869D /* QiSpeechManager.m */,
-				0665FC63218022180036C5C1 /* QiGuessWords.h */,
-				0665FC64218022180036C5C1 /* QiGuessWords.m */,
 				06DAFBFF21808C3C007E869D /* Tools.h */,
 				06DAFC0021808C3C007E869D /* Tools.m */,
 				06DAFC0521809C92007E869D /* QiDraw */,
@@ -117,6 +115,8 @@
 		06DAFC0521809C92007E869D /* QiDraw */ = {
 			isa = PBXGroup;
 			children = (
+				0665FC63218022180036C5C1 /* QiGuessWords.h */,
+				0665FC64218022180036C5C1 /* QiGuessWords.m */,
 				06DAFC0621809CAB007E869D /* QiDrawViewController.h */,
 				06DAFC0721809CAB007E869D /* QiDrawViewController.m */,
 			);

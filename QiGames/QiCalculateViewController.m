@@ -11,18 +11,18 @@
 
 @interface QiCalculateViewController ()
 
-@property (weak, nonatomic) IBOutlet UILabel *factorLabel1;
-@property (weak, nonatomic) IBOutlet UILabel *factorLabel2;
-@property (weak, nonatomic) IBOutlet UILabel *factorLabel3;
-@property (weak, nonatomic) IBOutlet UILabel *operatorLabel1;
-@property (weak, nonatomic) IBOutlet UILabel *operatorLabel2;
-@property (weak, nonatomic) IBOutlet UILabel *resultLabel;
-@property (weak, nonatomic) IBOutlet UILabel *recordingLabel;
-@property (weak, nonatomic) IBOutlet UIButton *questionButton;
-@property (weak, nonatomic) IBOutlet UIButton *resultButton;
-@property (weak, nonatomic) IBOutlet UIButton *startButton;
+@property (weak, nonatomic) IBOutlet UILabel *factorLabel1;//!< 数字Label1
+@property (weak, nonatomic) IBOutlet UILabel *factorLabel2;//!< 数字Label2
+@property (weak, nonatomic) IBOutlet UILabel *factorLabel3;//!< 数字Label3
+@property (weak, nonatomic) IBOutlet UILabel *operatorLabel1;//!< 运算符Label1
+@property (weak, nonatomic) IBOutlet UILabel *operatorLabel2;//!< 运算符Label2
+@property (weak, nonatomic) IBOutlet UILabel *resultLabel;//!< 结果Label
+@property (weak, nonatomic) IBOutlet UILabel *recordingLabel;//!< 计时Label
+@property (weak, nonatomic) IBOutlet UIButton *questionButton;//!< 出题Button
+@property (weak, nonatomic) IBOutlet UIButton *resultButton;//!< 结果Button
+@property (weak, nonatomic) IBOutlet UIButton *startButton;//!< 开始Button
 
-@property (nonatomic, strong) QiSpeechManager *speechManager;
+@property (nonatomic, strong) QiSpeechManager *speechManager;//!< 语音管理者
 
 @property (nonatomic, strong) NSTimer *timer;//!< 计时器
 
@@ -35,6 +35,8 @@
     [super viewDidLoad];
     
     [self resetElements];
+    
+//    _speechManager = [[QiSpeechManager alloc] init];
     
     [_startButton setTitle:[_startButton titleForState:UIControlStateSelected] forState:(UIControlStateSelected | UIControlStateHighlighted)];
 }
@@ -54,7 +56,7 @@
     
     [self setQuestion];
     
-    if (_speechManager) {
+    if (_speechManager) {//!< 语音管理器
         _recordingLabel.text = @"";
         _recordingLabel.layer.borderWidth = .0;
         
@@ -89,9 +91,8 @@
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:message preferredStyle:UIAlertControllerStyleAlert];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleCancel handler:nil];
     UIAlertAction *confirmAction = [UIAlertAction actionWithTitle:sender.currentTitle style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
         sender.selected = !sender.selected;
-        
-        
         self.resultButton.enabled = !self.resultButton.enabled;
         
         if (sender.selected) {
@@ -122,6 +123,26 @@
     _operatorLabel2.text = [self generateOperator];
 }
 
+//! 生成数字
+- (NSString *)generateFactor {
+    
+    NSUInteger r = arc4random() % 10;
+    NSUInteger max = r < 4? 10: r < 7? 20: r < 9? 50: 100;
+    NSUInteger factor = arc4random() % max;
+    
+    return @(factor).stringValue;
+}
+
+//! 生成运算符
+- (NSString *)generateOperator {
+    
+    NSUInteger r = arc4random() % 5;
+    NSString *operator = r < 2? @"+": r < 4? @"-": @"×";
+    
+    return operator;
+}
+
+//!< 计算方法
 - (NSInteger)calculate {
     
     NSUInteger factor1 = _factorLabel1.text.integerValue;
@@ -140,23 +161,6 @@
     }
     
     return result;
-}
-
-- (NSString *)generateFactor {
-    
-    NSUInteger r = arc4random() % 10;
-    NSUInteger max = r < 4? 10: r < 7? 20: r < 9? 50: 100;
-    NSUInteger factor = arc4random() % max;
-    
-    return @(factor).stringValue;
-}
-
-- (NSString *)generateOperator {
-    
-    NSUInteger r = arc4random() % 5;
-    NSString *operator = r < 2? @"+": r < 4? @"-": @"×";
-    
-    return operator;
 }
 
 - (NSUInteger)calculateWithOperator:(NSString *)operator leftFactor:(NSUInteger)leftFactor rightFactor:(NSUInteger)rightFactor  {

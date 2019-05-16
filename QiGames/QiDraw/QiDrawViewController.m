@@ -14,7 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *wordLabel;//!< 猜题Label
 @property (weak, nonatomic) IBOutlet UILabel *secondsLabel;//!< 计时Label
 @property (weak, nonatomic) IBOutlet UILabel *correctLabel;//!< 成功计数Label
-@property (weak, nonatomic) IBOutlet UILabel *wrongLabel;//!< 失败技术Label
+@property (weak, nonatomic) IBOutlet UILabel *wrongLabel;//!< 失败计数Label
 
 @property (weak, nonatomic) IBOutlet UIButton *correctButton;//!< 成功按钮
 @property (weak, nonatomic) IBOutlet UIButton *wrongButton;//!< 失败按钮
@@ -24,7 +24,7 @@
 @property (nonatomic, assign) NSInteger correctCount;//!< 答对题数
 @property (nonatomic, assign) NSInteger wrongCount;//!< 答错题数
 
-@property (nonatomic, strong) QiGuessWords *guessWords;//!< 题目
+@property (nonatomic, strong) QiGuessWords *guessWords;//!< 词条（题目）
 @property (nonatomic, strong) NSTimer *timer;//!< 计时器
 
 @end
@@ -51,7 +51,7 @@
     
     _wordLabel.text = @"";
     
-    _seconds = 200;
+    _seconds = 300;
     _wrongCount = 0;
     _correctCount = 0;
     _secondsLabel.text = [NSString stringWithFormat:@"%li", (long)_seconds];

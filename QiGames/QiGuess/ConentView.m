@@ -94,7 +94,9 @@
     [_contentLabel setText:text];
 }
 
+
 #pragma mark - Actions
+
 - (void)buttonClicked:(UIButton *)button {
     
     if (_delegate && [_delegate respondsToSelector:@selector(conentView:clickedButton:)]) {
