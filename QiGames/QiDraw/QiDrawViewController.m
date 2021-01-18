@@ -51,7 +51,7 @@
     
     _wordLabel.text = @"";
     
-    _seconds = 300;
+    _seconds = 500;
     _wrongCount = 0;
     _correctCount = 0;
     _secondsLabel.text = [NSString stringWithFormat:@"%li", (long)_seconds];
